@@ -1,0 +1,135 @@
+// Variables
+$primary-color: #000000;
+$secondary-color: hsl(252%, 17%, 94%);
+$font-family: 'Kodechasan', sans-serif; // Fonte Kodechasan
+
+// Global Styles
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    background-color: $secondary-color;
+}
+
+// Header
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: $secondary-color;
+    margin-top: 50px; // Espaço acima do header
+
+    .logo img {
+        max-width: 150px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+
+        li {
+            margin: 0 10px;
+
+            a {
+                text-decoration: none;
+                color: $primary-color;
+                font-size: 20px; // Aumentando o tamanho da fonte dos links
+            }
+        }
+    }
+}
+
+// Main Content
+.hero {
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+}
+
+section.content {
+    padding: 20px;
+    text-align: center; // Centraliza o texto dentro da seção
+    float: right; // Faz a seção flutuar para a direita
+    width: 300px; // Define a largura da seção
+    margin-top: 20px; // Espaço acima da seção
+    margin-left: 50px; // Espaço entre a seção e o conteúdo principal
+    position: relative; // Permite que a seção seja posicionada acima de outros elementos
+    z-index: 0; // Garante que a seção fique acima de outros elementos
+
+    h1 {
+        font-size: 24px;
+        color: $primary-color;
+    }
+
+    p {
+        font-size: 16px;
+        color: $primary-color;
+        margin: 10px 0;
+    }
+
+    .products {
+        display: flex;
+        justify-content: center; // Centraliza os produtos dentro da seção
+        gap: 50px;
+
+        img {
+            max-width: 100px;
+        }
+    }
+}
+
+.meio {
+    display: flex;
+    flex-direction: column; // Organiza os elementos em coluna, com o texto abaixo da imagem
+    align-items: flex-start; // Alinha o conteúdo à esquerda
+    gap: 20px; // Espaçamento entre a imagem e o texto
+    padding-left: 100px; // Adiciona espaço à esquerda
+
+    img {
+        max-width: 500px;
+        margin-top: 100px; // Adiciona espaço acima da foto
+    }
+
+    h2 {
+        text-align: left; // Garante que o texto fique alinhado à esquerda
+        margin-top: 50px; // Espaçamento entre a imagem e o texto
+        color: $primary-color; // Cor do texto
+    }
+}
+
+// Responsiveness
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        height: 200px;
+    }
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            margin-bottom: 10px;
+        }
+    }
+
+    .meio {
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            margin-bottom: 50px;
+        }
+    }
+
+    section.content {
+        float: none; // Remove o float em telas menores
+        width: 100%; // Ocupa toda a largura disponível em telas menores
+        margin-left: 0; // Remove o espaço à esquerda em telas menores
+    }
+}
